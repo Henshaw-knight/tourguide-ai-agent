@@ -7,6 +7,7 @@ import { weatherAgent } from './agents/weather-agent';
 // import { tourGuideAgent } from './agents/tourguide-agent';
 import { tourGuideAgent } from './agents/tour-guide-agent';
 import { toolCallAppropriatenessScorer, completenessScorer, translationScorer } from './scorers/weather-scorer';
+import { a2aAgentRoute } from './routes/a2a-agent-route';
 
 export const mastra = new Mastra({
   workflows: { weatherWorkflow },
@@ -28,4 +29,11 @@ export const mastra = new Mastra({
     // Enables DefaultExporter and CloudExporter for AI tracing
     default: { enabled: true }, 
   },
+  server: {
+    build: {
+      openAPIDocs: true,
+      swaggerUI: true,
+    },
+    apiRoutes: [a2aAgentRoute]
+  }
 });
