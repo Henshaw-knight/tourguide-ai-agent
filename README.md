@@ -56,7 +56,7 @@ cd tourguide-ai-agent
 npm install
 
 # 3. Start the Mastra dev server
-npm mastra dev
+npx mastra dev
 ````
 
 Then open your browser at **[http://localhost:4111](http://localhost:4111)** and chat with your AI Tour Guide 🧳.
